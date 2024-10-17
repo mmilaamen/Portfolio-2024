@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import "./variables.scss";
+@import "./nav.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(./images/2841153.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: futura-pt, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+.myPhoto {
+  width: 40px;
+  height: 40px;
+  background-image: url(./images/unnamed.jpg);
+}
+h1 {
+  font-size: $secondary-font-size;
+}
+#container {
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  width: $primary-width;
+  .blink-01 {
+    position: relative;
+    animation: blink01 1s infinite alternate;
+  }
+  .blink-01::before {
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    filter: blur(40px);
+    width: $primary-width;
+    height: $primary-height;
+    content: "";
+    animation: bg_blink01 1s infinite alternate;
+  }
+  .blink-01::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(20px);
+    content: "Blinking";
+    animation: blink01 1s infinite alternate;
+  }
+  .blink-02 {
+    position: relative;
+    animation: blink02 1s infinite alternate;
+  }
+  .blink-02::before {
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    filter: blur(40px);
+    width: $primary-width;
+    height: $primary-height;
+    content: "";
+    animation: bg_blink02 1s infinite alternate;
+  }
+  .blink-02::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(20px);
+    content: "Text";
+    animation: blink02 1s infinite alternate;
+  }
+}
+
+@keyframes blink01 {
+  0% {
+    color: $secondary-bg-color;
+  }
+  100% {
+    color: $third-bg-color;
+  }
+}
+@keyframes blink02 {
+  0% {
+    color: $third-bg-color;
+  }
+  100% {
+    color: $secondary-bg-color;
+  }
+}
+@keyframes bg_blink01 {
+  0% {
+    filter: blur(40px);
+    background-color: $secondary-bg-color;
+  }
+  100% {
+    filter: blur(40px);
+    background-color: $third-bg-color;
+  }
+}
+@keyframes bg_blink02 {
+  0% {
+    filter: blur(40px);
+    background-color: $third-bg-color;
+  }
+  100% {
+    filter: blur(40px);
+    background-color: $secondary-bg-color;
+  }
+}
+#quote {
+  width: $primary-width;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  .p1,
+  .p2 {
+    color: $primary-color;
+    font-family: $font;
+    font-size: $primary-font-size;
+    letter-spacing: 0.2rem;
+  }
+  .p2 {
+    color: $secondary-color;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .p1,
+  .p2 {
+    font-size: $primary-font-size;
+  }
+}
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 6rem;
+  }
+  #quote {
+    .p1,
+    .p2 {
+      font-size: 2.5rem;
+    }
+  }
+  footer {
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      font-size: $secondary-font-size;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import "./variables.scss";
+@import "./nav.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: #3c3b3f;
+  background: -webkit-linear-gradient(to right, #605c3c, #3c3b3f);
+}
+
+main {
+  margin: 20px 40px;
+  h1 {
+    text-align: center;
+  }
+  .fa-solid {
+    color: $secondary-color;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  p,
+  h4 {
+    text-align: center;
+    margin: 5px 0;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(249, 243, 236);
+  }
+}
+.card {
+  color: rgb(249, 243, 236);
+}
+
+@media screen and (max-width: 480px) {
+  .nav2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 480px) {
+  .nav1 {
+    display: none;
+  }
+  .nav2 {
+    width: $primary-width;
+    height: 100px;
+    background: $primary-bg-color;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 31%,
+      rgb(52, 52, 52) 88%,
+      rgb(109, 109, 109) 100%
+    );
+    border-width: 6px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, $secondary-color, rgba(0, 0, 0, 0))
+      1 100%;
+
+    ul {
+      width: 90%;
+      height: $primary-height;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      padding: $secondary-font-size;
+    }
+
+    a {
+      color: $primary-color;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  footer {
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      font-size: $secondary-font-size;
+    }
+  }
+}
